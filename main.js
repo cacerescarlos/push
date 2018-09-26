@@ -62,7 +62,7 @@ function updateSubscriptionOnServer(subscription) {
   finalPushSubscription.p256dh = finalPushSubscription.keys.p256dh;
   finalPushSubscription.auth = finalPushSubscription.keys.auth;
 
-var x= fetch("http://localhost:3000/push", {
+ fetch("http://192.168.0.11:3000/push", {
     method: "POST",
     body: JSON.stringify(finalPushSubscription),
     headers: {
@@ -177,5 +177,5 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
         });
 } else {
     console.warn('Push messaging is NO SOPORTA');
-    pushButton.textContent = 'Push NO SOPORTA';
+    pushButton.textContent = 'NO SOPORTA PUSH';
 }
